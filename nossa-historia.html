@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História - Drucci Acessórios | Uma Jornada de Elegância</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="nossa-historia.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="luxury-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="preloader-text">
+                <span class="brand-name">Drucci</span>
+                <span class="loading-text">Carregando nossa história...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-gem me-2"></i>
+                <span class="brand-text">Drucci Acessórios</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nossa-historia.html">Nossa História</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-primary position-relative" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Desde 2018</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            Uma História de
+                            <span class="gradient-text">Elegância</span>
+                            <span class="title-decoration"></span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Nascida da paixão pela beleza e pelo artesanato refinado, a Drucci Acessórios 
+                            transformou sonhos em realidade, criando peças que celebram a feminilidade 
+                            e a sofisticação em cada detalhe precioso.
+                        </p>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="stat-number" data-target="6">0</div>
+                                <div class="stat-label">Anos de Tradição</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="stat-number" data-target="15000">0</div>
+                                <div class="stat-label">Clientes Felizes</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                                <div class="stat-number" data-target="850">0</div>
+                                <div class="stat-label">Peças Únicas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+                            <a href="#timeline" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play me-2"></i>Descobrir História
+                            </a>
+                            <a href="produtos.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-gem me-2"></i>Ver Coleção
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-visual">
+                        <div class="main-image-container">
+                            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Drucci Acessórios - Nossa História" class="main-image">
+                            
+                            <div class="floating-elements">
+                                <div class="floating-element element-1">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="floating-element element-4">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="story-highlight">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Nossa Missão</h4>
+                                    <p>Realçar a beleza única de cada mulher</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-history"></i>
+                    <span>Nossa Jornada</span>
+                </div>
+                <h2 class="section-title">Marcos da Nossa História</h2>
+                <p class="section-description">
+                    Cada ano trouxe novos desafios, conquistas e momentos especiais que moldaram 
+                    quem somos hoje. Conheça os principais marcos da nossa trajetória.
+                </p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-marker">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3>O Início de Tudo</h3>
+                        <p>Drucci funda a empresa numa pequena oficina em Lisboa, com o sonho de democratizar a elegância através de semi-joias de alta qualidade.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Início da Drucci">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-marker">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3>Primeira Coleção</h3>
+                        <p>Lançamento da primeira coleção oficial "Essência" com 25 peças únicas, vendidas completamente em apenas 2 semanas, confirmando o potencial da marca.</p>
+                        <div class="timeline-achievements">
+                            <div class="achievement">
+                                <i class="fas fa-trophy"></i>
+                                <span>25 peças vendidas</span>
+                            </div>
+                            <div class="achievement">
+                                <i class="fas fa-clock"></i>
+                                <span>Em 2 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-marker">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3>Expansão Digital</h3>
+                        <p>Lançamento da loja online durante a pandemia, permitindo que clientes de todo Portugal tenham acesso às nossas criações exclusivas.</p>
+                        <div class="timeline-stats">
+                            <div class="stat">
+                                <span class="stat-number">500%</span>
+                                <span class="stat-label">Crescimento</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">18</span>
+                                <span class="stat-label">Distritos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-marker">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3>Reconhecimento Nacional</h3>
+                        <p>Prémio "Melhor Marca de Semi-joias" pelos clientes, consolidando nossa posição no mercado nacional.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Prémio Drucci">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="500">
+                    <div class="timeline-marker">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Comunidade Drucci</h3>
+                        <p>Alcançamos a marca de 10.000 clientes satisfeitas e lançamos o programa de fidelidade "Família Drucci" com benefícios exclusivos.</p>
+                        <div class="timeline-achievements">
+                            <div class="achievement">
+                                <i class="fas fa-heart"></i>
+                                <span>10.000 clientes</span>
+                            </div>
+                            <div class="achievement">
+                                <i class="fas fa-star"></i>
+                                <span>4.9/5 avaliação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="600">
+                    <div class="timeline-marker">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Compromisso Sustentável</h3>
+                        <p>Lançamento do programa "Drucci Verde" com embalagens 100% recicláveis e parcerias com fornecedores sustentáveis certificados.</p>
+                        <div class="timeline-stats">
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Embalagens Eco</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50%</span>
+                                <span class="stat-label">Menos CO₂</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="700">
+                    <div class="timeline-marker">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3>Coleção Premium</h3>
+                        <p>Lançamento da linha premium "Royale" com peças exclusivas e edições limitadas, elevando ainda mais o padrão de qualidade e sofisticação.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Coleção Premium">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-compass"></i>
+                    <span>Nossos Valores</span>
+                </div>
+                <h2 class="section-title">O Que Nos Move</h2>
+                <p class="section-description">
+                    Princípios sólidos que guiam cada decisão, cada criação e cada relacionamento 
+                    que construímos ao longo da nossa jornada.
+                </p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Paixão</h3>
+                    <p>Cada peça é criada com amor genuíno e dedicação absoluta. Nossa paixão pela beleza e perfeição transparece em cada detalhe meticulosamente trabalhado.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Qualidade</h3>
+                    <p>Utilizamos apenas materiais premium e processos rigorosos de controle de qualidade para garantir durabilidade, beleza e satisfação duradoura.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunidade</h3>
+                    <p>Mais que clientes, vocês são nossa família. Construímos relacionamentos duradouros baseados na confiança, carinho e respeito mútuo.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustentabilidade</h3>
+                    <p>Comprometemo-nos com práticas sustentáveis em toda nossa cadeia, desde a escolha consciente dos materiais até embalagens eco-friendly.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Inovação</h3>
+                    <p>Estamos sempre em busca de novas tendências, técnicas avançadas e materiais inovadores para surpreender e encantar nossas clientes.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Transparência</h3>
+                    <p>Acreditamos na honestidade total com nossas clientes, desde preços justos até a origem responsável de todos os nossos materiais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="founder-image">
+                        <img src="ludivina.jpeg" alt="Drucci - Fundadora">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="founder-content">
+                        <div class="section-badge">
+                            <i class="fas fa-user-crown"></i>
+                            <span>Nossa Fundadora</span>
+                        </div>
+                        
+                        <h2 class="founder-name">Edianete Bumba</h2>
+                        <p class="founder-title">Fundadora </p>
+                        
+                        <div class="founder-quote">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Acredito que cada mulher possui uma beleza única que merece ser celebrada. Minha missão é criar peças que não apenas complementem, mas que despertem a confiança e a elegância natural que existe em cada uma de vocês."</p>
+                        </div>
+                        
+                        <div class="founder-details">
+                            <div class="detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Formação</h4>
+                                    <p>Relações internacionais </p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Experiência</h4>
+                                    <p>5+ anos em design de acessórios de luxo</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4>Paixão</h4>
+                                    <p>Empoderar mulheres através da elegância</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-trophy"></i>
+                    <span>Conquistas</span>
+                </div>
+                <h2 class="section-title">Nossos Marcos</h2>
+                <p class="section-description">
+                    Reconhecimentos e conquistas que celebram nossa dedicação à excelência 
+                    e ao compromisso com a satisfação das nossas clientes.
+                </p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Melhor Marca 2021</h3>
+                    <p>Prémio fornecidos pelos nossos clientes</p>
+                    <div class="achievement-year">2021</div>
+                </div>
+
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>5 Estrelas</h3>
+                    <p>Avaliação média dos clientes em todas as plataformas</p>
+                    <div class="achievement-year">2022</div>
+                </div>
+
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="achievement-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Certificação Verde</h3>
+                    <p>Selo de Sustentabilidade Empresarial </p>
+                    <div class="achievement-year">2023</div>
+                </div>
+
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Top 10 Portugal</h3>
+                    <p>Entre as 10 melhores marcas de acessórios</p>
+                    <div class="achievement-year">2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-comments"></i>
+                    <span>Depoimentos</span>
+                </div>
+                <h2 class="section-title">Histórias Reais</h2>
+                <p class="section-description">
+                    As palavras das nossas clientes são o nosso maior tesouro e a prova 
+                    de que estamos no caminho certo.
+                </p>
+            </div>
+
+            <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-track">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"A Drucci transformou completamente minha relação com acessórios. Cada peça conta uma história e me faz sentir única e especial. A qualidade é excepcional!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sofia Mendes">
+                            <div class="author-info">
+                                <h4>Sofia Mendes</h4>
+                                <p>Cliente desde 2019</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Comprei meu conjunto de casamento na Drucci e foi perfeito! O atendimento personalizado e a atenção aos detalhes fizeram toda a diferença no meu dia especial."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Carla Santos">
+                            <div class="author-info">
+                                <h4>Carla Santos</h4>
+                                <p>Cliente desde 2020</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Sou fã da Drucci há anos! A evolução da marca é impressionante, sempre inovando mas mantendo a qualidade e elegância que me conquistaram desde o início."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Rita Oliveira">
+                            <div class="author-info">
+                                <h4>Rita Oliveira</h4>
+                                <p>Cliente desde 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="carousel-btn next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-background">
+            <div class="cta-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Faça Parte da Nossa História</h2>
+                        <p class="cta-description">
+                            Junte-se às milhares de mulheres que já descobriram a elegância Drucci. 
+                            Sua jornada de beleza e sofisticação começa aqui, conosco.
+                        </p>
+                        
+                        <div class="cta-actions">
+                            <a href="produtos.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-shopping-bag me-2"></i>
+                                Explorar Coleção
+                            </a>
+                            <a href="contato.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i>
+                                Falar Connosco
+                            </a>
+                        </div>
+                        
+                        <div class="cta-guarantee">
+                            <div class="guarantee-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Entrega Grátis</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30 Dias Garantia</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Qualidade Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <h5 class="brand-name">
+                                <i class="fas fa-gem me-2"></i>Drucci Acessórios
+                            </h5>
+                            <p class="brand-description">
+                                Elegância e qualidade em cada peça. Sua beleza é nossa inspiração, 
+                                sua satisfação é nossa maior conquista.
+                            </p>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-pinterest"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h6 class="footer-title">Links Rápidos</h6>
+                            <ul class="links-list">
+                                <li><a href="index.html">Início</a></li>
+                                <li><a href="produtos.html">Produtos</a></li>
+                                <li><a href="nossa-historia.html">Nossa História</a></li>
+                                <li><a href="sobre.html">Sobre</a></li>
+                                <li><a href="contato.html">Contato</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h6 class="footer-title">Contato</h6>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+351-964-591-135</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@drucciacessorios.pt</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Lisboa, Portugal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-12">
+                        <div class="footer-hours">
+                            <h6 class="footer-title">Horário de Atendimento</h6>
+                            <div class="hours-info">
+                                <div class="hours-item">
+                                    <span class="day">Segunda - Sexta</span>
+                                    <span class="time">9h às 18h</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Sábado</span>
+                                    <span class="time">9h às 14h</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Domingo</span>
+                                    <span class="time">Fechado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2024 Drucci Acessórios. Todos os direitos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="made-with">
+                            Desenvolvido por World tech 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nossa-historia.js"></script>
+</body>
+</html>

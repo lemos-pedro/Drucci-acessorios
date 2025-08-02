@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a história da Drucci Acessórios, uma marca de semi-joias que celebra a elegância e a feminilidade desde 2018.">
+    <meta name="keywords" content="Drucci Acessórios, semi-joias, elegância, Lisboa, moda feminina">
+    <meta property="og:title" content="Sobre Nós - Drucci Acessórios">
+    <meta property="og:description" content="Descubra a história e os valores da Drucci Acessórios, uma marca apaixonada por criar semi-joias únicas.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+    <meta property="og:url" content="https://www.drucciacessorios.pt/sobre.html">
+    <title>Sobre Nós - Drucci Acessórios | Nossa História de Elegância</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" as="image">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+    <noscript>
+        <div class="alert alert-warning text-center">
+            Para a melhor experiência, ative o JavaScript no seu navegador.
+        </div>
+    </noscript>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" role="navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-gem me-2"></i>Drucci Acessórios
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Abrir busca">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-primary position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal" aria-label="Abrir carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Pesquisar Produtos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Digite para buscar..." aria-label="Campo de busca">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Seu Carrinho</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div class="text-end mt-3">
+                        <strong>Total: <span id="cartTotal">€0.00</span></strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="checkoutBtn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" role="region" aria-labelledby="hero-title">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <span class="badge bg-primary-soft text-primary mb-3 px-3 py-2">✨ Desde 2018</span>
+                        <h1 id="hero-title" class="display-4 fw-bold mb-4">
+                            Uma História de <span class="text-primary">Elegância</span>
+                        </h1>
+                        <p class="lead text-muted mb-4">
+                            Nascida da paixão pela beleza e pelo artesanato refinado, a Drucci Acessórios 
+                            transformou sonhos em realidade, criando peças que celebram a feminilidade 
+                            e a sofisticação em cada detalhe.
+                        </p>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number">6+</div>
+                                <div class="stat-label">Anos de História</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10k+</div>
+                                <div class="stat-label">Clientes Felizes</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Peças Criadas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image-container">
+                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Drucci Acessórios - História de elegância com semi-joias" class="img-fluid rounded-4 shadow-lg main-image" loading="lazy">
+                        
+                        <div class="floating-element element-1">
+                            <i class="fas fa-heart text-primary"></i>
+                        </div>
+                        <div class="floating-element element-2">
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="floating-element element-3">
+                            <i class="fas fa-gem text-primary"></i>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="d-flex align-items-center">
+                                <div class="story-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Nossa Missão</div>
+                                    <small class="text-muted">Realçar a beleza única de cada mulher</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section py-5" role="region" aria-labelledby="story-title">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 id="story-title" class="display-5 fw-bold mb-4">A Nossa Jornada</h2>
+                    <p class="lead text-muted">
+                        Cada peça Drucci conta uma história. A nossa começou com um sonho simples: 
+                        criar acessórios que não apenas complementassem, mas celebrassem a individualidade de cada mulher.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="story-content">
+                        <div class="story-badge">
+                            <i class="fas fa-seedling"></i>
+                            <span>O Início</span>
+                        </div>
+                        <h3 class="fw-bold mb-3">Onde Tudo Começou</h3>
+                        <p class="text-muted mb-4">
+                            Em 2018, numa pequena oficina em Lisboa, Maria Drucci começou a dar vida aos seus 
+                            primeiros desenhos. Com formação em design de joias e uma paixão inabalável pela 
+                            perfeição, ela acreditava que cada mulher merecia acessórios únicos que refletissem 
+                            sua personalidade.
+                        </p>
+                        <p class="text-muted">
+                            O que começou como um hobby rapidamente se transformou numa missão: democratizar 
+                            o acesso a semi-joias de alta qualidade, sem comprometer o design ou a elegância.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Início da Drucci com Maria Drucci em sua oficina" class="img-fluid rounded-3 shadow" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-play-circle fa-3x text-white"></i>
+                                <p class="text-white mt-2">Ver Nossa História</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <div class="story-content">
+                        <div class="story-badge">
+                            <i class="fas fa-rocket"></i>
+                            <span>Crescimento</span>
+                        </div>
+                        <h3 class="fw-bold mb-3">Expandindo Horizontes</h3>
+                        <p class="text-muted mb-4">
+                            Com o passar dos anos, a Drucci cresceu organicamente, conquistando o coração 
+                            de milhares de mulheres em todo Portugal. Cada peça vendida era uma nova história, 
+                            um novo sorriso, uma nova confiança despertada.
+                        </p>
+                        <p class="text-muted">
+                            Investimos em tecnologia de ponta e parcerias com os melhores fornecedores, 
+                            sempre mantendo nosso compromisso com a qualidade e a acessibilidade.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="story-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Crescimento da Drucci com novas coleções" class="img-fluid rounded-3 shadow" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="story-content">
+                        <div class="story-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Hoje</span>
+                        </div>
+                        <h3 class="fw-bold mb-3">Liderança e Inovação</h3>
+                        <p class="text-muted mb-4">
+                            Hoje, a Drucci Acessórios é reconhecida como uma das principais marcas de 
+                            semi-joias em Portugal. Continuamos fiéis aos nossos valores originais, 
+                            mas sempre inovando e surpreendendo nossas clientes.
+                        </p>
+                        <p class="text-muted">
+                            Cada nova coleção é pensada com carinho, cada peça é testada rigorosamente, 
+                            e cada cliente é tratada como parte da nossa família Drucci.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Drucci Acessórios hoje, líder em semi-joias" class="img-fluid rounded-3 shadow" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section bg-light py-5" role="region" aria-labelledby="values-title">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 id="values-title" class="display-5 fw-bold mb-4">Nossos Valores</h2>
+                    <p class="lead text-muted">
+                        Os princípios que nos guiam em cada decisão, em cada criação, em cada relacionamento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Paixão</h4>
+                        <p class="text-muted">
+                            Cada peça é criada com amor e dedicação. Nossa paixão pela beleza 
+                            e pela perfeição transparece em cada detalhe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Qualidade</h4>
+                        <p class="text-muted">
+                            Utilizamos apenas materiais premium e processos rigorosos de controle 
+                            de qualidade para garantir durabilidade e beleza.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Comunidade</h4>
+                        <p class="text-muted">
+                            Mais que clientes, vocês são nossa família. Construímos relacionamentos 
+                            duradouros baseados na confiança e no carinho.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Sustentabilidade</h4>
+                        <p class="text-muted">
+                            Comprometemo-nos com práticas sustentáveis, desde a escolha dos materiais 
+                            até as embalagens eco-friendly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Inovação</h4>
+                        <p class="text-muted">
+                            Estamos sempre em busca de novas tendências, técnicas e materiais 
+                            para surpreender e encantar nossas clientes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Transparência</h4>
+                        <p class="text-muted">
+                            Acreditamos na honestidade total com nossas clientes, desde os preços 
+                            justos até a origem dos nossos materiais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section py-5" role="region" aria-labelledby="timeline-title">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 id="timeline-title" class="display-5 fw-bold mb-4">Nossa Linha do Tempo</h2>
+                    <p class="lead text-muted">
+                        Marcos importantes da nossa jornada rumo à excelência.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h4 class="fw-bold">Fundação</h4>
+                        <p class="text-muted">Maria Drucci funda a empresa numa pequena oficina em Lisboa, com o sonho de democratizar a elegância.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h4 class="fw-bold">Primeira Coleção</h4>
+                        <p class="text-muted">Lançamento da primeira coleção oficial com 25 peças únicas, vendidas completamente em 2 semanas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h4 class="fw-bold">Loja Online</h4>
+                        <p class="text-muted">Lançamento da loja online, permitindo que clientes de todo Portugal tenham acesso às nossas criações.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-marker">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h4 class="fw-bold">Reconhecimento</h4>
+                        <p class="text-muted">Prémio "Melhor Marca de Semi-joias" pela Associação Portuguesa de Design de Moda.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="timeline-marker">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h4 class="fw-bold">10.000 Clientes</h4>
+                        <p class="text-muted">Alcançamos a marca de 10.000 clientes satisfeitas, consolidando nossa posição no mercado.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="timeline-marker">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h4 class="fw-bold">Sustentabilidade</h4>
+                        <p class="text-muted">Lançamento do programa "Drucci Verde" com embalagens 100% recicláveis e parcerias sustentáveis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="timeline-marker">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h4 class="fw-bold">Coleção Premium</h4>
+                        <p class="text-muted">Lançamento da linha premium com peças exclusivas e edições limitadas para ocasiões especiais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section bg-light py-5" role="region" aria-labelledby="team-title">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 id="team-title" class="display-5 fw-bold mb-4">Nossa Equipa</h2>
+                    <p class="lead text-muted">
+                        As pessoas talentosas por trás de cada criação Drucci.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Maria Drucci, Fundadora e Designer Chefe da Drucci Acessórios" class="img-fluid" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="https://www.linkedin.com" class="text-white" aria-label="LinkedIn de Maria Drucci"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/drucci_acessorios" class="text-white" aria-label="Instagram de Maria Drucci"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4 class="fw-bold">Maria Drucci</h4>
+                            <p class="text-primary mb-2">Fundadora & Designer Chefe</p>
+                            <p class="text-muted small">
+                                Visionária por trás da marca, Maria combina formação em design com paixão pela beleza feminina.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="João Silva, Diretor de Qualidade da Drucci Acessórios" class="img-fluid" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="https://www.linkedin.com" class="text-white" aria-label="LinkedIn de João Silva"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://twitter.com" class="text-white" aria-label="Twitter de João Silva"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4 class="fw-bold">João Silva</h4>
+                            <p class="text-primary mb-2">Diretor de Qualidade</p>
+                            <p class="text-muted small">
+                                Especialista em materiais preciosos, João garante que cada peça atenda aos mais altos padrões.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Ana Costa, Gestora de Experiência do Cliente da Drucci Acessórios" class="img-fluid" loading="lazy">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="https://www.linkedin.com" class="text-white" aria-label="LinkedIn de Ana Costa"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/drucci_acessorios" class="text-white" aria-label="Instagram de Ana Costa"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4 class="fw-bold">Ana Costa</h4>
+                            <p class="text-primary mb-2">Gestora de Experiência do Cliente</p>
+                            <p class="text-muted small">
+                                Ana cuida de cada cliente como se fosse família, garantindo uma experiência excepcional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5" role="region" aria-labelledby="testimonials-title">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 id="testimonials-title" class="display-5 fw-bold mb-4">O Que Dizem Sobre Nós</h2>
+                    <p class="lead text-muted">
+                        As palavras das nossas clientes são o nosso maior tesouro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "As peças da Drucci são simplesmente deslumbrantes! A qualidade é excepcional 
+                            e o atendimento é impecável. Já sou cliente há 3 anos e nunca me decepcionei."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Sofia Mendes, cliente da Drucci Acessórios" class="author-image" loading="lazy">
+                            <div>
+                                <div class="author-name">Sofia Mendes</div>
+                                <div class="author-location">Lisboa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Comprei um conjunto para o meu casamento e foi perfeito! As peças são elegantes, 
+                            confortáveis e recebo elogios sempre que uso. Recomendo de olhos fechados!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Carla Santos, cliente da Drucci Acessórios" class="author-image" loading="lazy">
+                            <div>
+                                <div class="author-name">Carla Santos</div>
+                                <div class="author-location">Porto</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "A Drucci transformou a minha relação com acessórios. Cada peça é única e especial. 
+                            O cuidado com os detalhes e a embalagem premium fazem toda a diferença."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Rita Oliveira, cliente da Drucci Acessórios" class="author-image" loading="lazy">
+                            <div>
+                                <div class="author-name">Rita Oliveira</div>
+                                <div class="author-location">Coimbra</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section bg-primary text-white py-5报警
+
+System: ### **CSS (`sobre.css`)**
+<xaiArtifact artifact_id="7e50336d-038c-42e4-9843-ff711661735b" artifact_version_id="f473aa28-1b9e-4bf6-8cd4-ae8707372a6a" title="sobre.css" contentType="text/css">

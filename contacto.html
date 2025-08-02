@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Drucci Acessórios | Fale Connosco</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-container">
+                    <i class="fas fa-gem brand-icon"></i>
+                    <div class="brand-text">
+                        <div class="brand-name">Drucci</div>
+                        <div class="brand-subtitle">Acessórios</div>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="produtos.html" data-bs-toggle="dropdown">
+                            Coleções
+                        </a>
+                        <ul class="dropdown-menu luxury-dropdown">
+                            <li><a class="dropdown-item" href="produtos.html?category=necklaces">Colares</a></li>
+                            <li><a class="dropdown-item" href="produtos.html?category=earrings">Brincos</a></li>
+                            <li><a class="dropdown-item" href="produtos.html?category=bracelets">Pulseiras</a></li>
+                            <li><a class="dropdown-item" href="produtos.html?category=rings">Anéis</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item featured" href="produtos.html?category=sets">Conjuntos Premium</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Nossa História</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-actions">
+                    <button class="action-btn search-btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn wishlist-btn" data-bs-toggle="modal" data-bs-target="#wishlistModal">
+                        <i class="fas fa-heart"></i>
+                        <span class="action-badge" id="wishlistCount">0</span>
+                    </button>
+                    <button class="action-btn cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="action-badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Contato Drucci Acessórios" class="hero-image">
+        </div>
+        
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="hero-badge">
+                            <span class="badge-icon">💬</span>
+                            <span class="badge-text">Estamos Aqui Para Você</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            <span class="title-line">Fale</span>
+                            <span class="title-highlight">Connosco</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Tem alguma dúvida? Precisa de ajuda para escolher a peça perfeita? 
+                            Nossa equipe especializada está pronta para oferecer o melhor atendimento.
+                        </p>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">24h</div>
+                                <div class="stat-label">Resposta Rápida</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Satisfação</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5★</div>
+                                <div class="stat-label">Avaliação</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-text">Entre em Contato</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="quick-contact-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="quick-contact-card whatsapp-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <p>Atendimento instantâneo e personalizado</p>
+                        <div class="contact-info">
+                            <strong>+351 964 591 135</strong>
+                        </div>
+                        <a href="https://wa.me/351964591135?text=Olá! Gostaria de saber mais sobre os produtos Drucci." 
+                           class="btn btn-success btn-luxury" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            <span>Conversar Agora</span>
+                        </a>
+                        <div class="availability">
+                            <i class="fas fa-circle text-success"></i>
+                            <span>Online agora</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="quick-contact-card email-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>Suporte completo e detalhado</p>
+                        <div class="contact-info">
+                            <strong>info@drucciacessorios.pt</strong>
+                        </div>
+                        <a href="mailto:info@drucciacessorios.pt?subject=Consulta sobre produtos Drucci" 
+                           class="btn btn-primary btn-luxury">
+                            <i class="fas fa-envelope me-2"></i>
+                            <span>Enviar Email</span>
+                        </a>
+                        <div class="availability">
+                            <i class="fas fa-clock text-warning"></i>
+                            <span>Resposta em 2-4h</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="quick-contact-card phone-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Telefone</h4>
+                        <p>Atendimento direto e pessoal</p>
+                        <div class="contact-info">
+                            <strong>+351 964 591 135</strong>
+                        </div>
+                        <a href="tel:+351964591135" class="btn btn-info btn-luxury">
+                            <i class="fas fa-phone me-2"></i>
+                            <span>Ligar Agora</span>
+                        </a>
+                        <div class="availability">
+                            <i class="fas fa-calendar text-info"></i>
+                            <span>Seg-Sex: 9h-18h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="section-header text-center mb-5" data-aos="fade-up">
+                        <div class="section-badge">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Formulário de Contato</span>
+                        </div>
+                        <h2 class="section-title">Envie Sua Mensagem</h2>
+                        <p class="section-description">
+                            Preencha o formulário abaixo e nossa equipe entrará em contato em breve
+                        </p>
+                    </div>
+                    
+                    <div class="contact-form-card" data-aos="fade-up" data-aos-delay="200">
+                        <form id="contactForm" class="luxury-form">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">
+                                            <i class="fas fa-user me-2"></i>Nome
+                                        </label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">
+                                            <i class="fas fa-user me-2"></i>Sobrenome
+                                        </label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">
+                                            <i class="fas fa-envelope me-2"></i>Email
+                                        </label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">
+                                            <i class="fas fa-phone me-2"></i>Telefone
+                                        </label>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="subject" class="form-label">
+                                            <i class="fas fa-tag me-2"></i>Assunto
+                                        </label>
+                                        <select class="form-select" id="subject" name="subject" required>
+                                            <option value="">Selecione um assunto</option>
+                                            <option value="produto">Dúvidas sobre Produtos</option>
+                                            <option value="pedido">Status do Pedido</option>
+                                            <option value="troca">Trocas e Devoluções</option>
+                                            <option value="personalizado">Produto Personalizado</option>
+                                            <option value="parceria">Parcerias</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">
+                                            <i class="fas fa-comment me-2"></i>Mensagem
+                                        </label>
+                                        <textarea class="form-control" id="message" name="message" rows="6" 
+                                                  placeholder="Conte-nos como podemos ajudar..." required></textarea>
+                                        <div class="form-feedback"></div>
+                                        <small class="form-text">Mínimo 10 caracteres</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Quero receber novidades e ofertas exclusivas por email
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            Concordo com a <a href="#" class="text-primary">Política de Privacidade</a> *
+                                        </label>
+                                        <div class="form-feedback"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-luxury btn-lg" id="submitBtn">
+                                        <span class="btn-text">
+                                            <i class="fas fa-paper-plane me-2"></i>
+                                            Enviar Mensagem
+                                        </span>
+                                        <span class="btn-loading d-none">
+                                            <i class="fas fa-spinner fa-spin me-2"></i>
+                                            Enviando...
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Perguntas Frequentes</span>
+                </div>
+                <h2 class="section-title">Dúvidas Comuns</h2>
+                <p class="section-description">
+                    Encontre respostas rápidas para as perguntas mais frequentes
+                </p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion luxury-accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="200">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fas fa-shipping-fast me-3"></i>
+                                    Qual o prazo de entrega?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Nossos prazos de entrega são:</p>
+                                    <ul>
+                                        <li><strong>Lisboa e Porto:</strong> 24-48h</li>
+                                        <li><strong>Resto de Portugal:</strong> 2-3 dias úteis</li>
+                                        <li><strong>Ilhas:</strong> 3-5 dias úteis</li>
+                                    </ul>
+                                    <p>Oferecemos envio gratuito para compras acima de €50. Para pedidos urgentes, temos opção de entrega expressa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fas fa-undo me-3"></i>
+                                    Como funciona a política de trocas?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Nossa política de trocas é muito flexível:</p>
+                                    <ul>
+                                        <li><strong>Prazo:</strong> 30 dias corridos após o recebimento</li>
+                                        <li><strong>Condição:</strong> Produto em perfeito estado, com embalagem original</li>
+                                        <li><strong>Processo:</strong> Entre em contato conosco para iniciar a troca</li>
+                                        <li><strong>Custo:</strong> Primeira troca gratuita, demais por conta do cliente</li>
+                                    </ul>
+                                    <p>Produtos personalizados não podem ser trocados, exceto em caso de defeito.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fas fa-certificate me-3"></i>
+                                    As peças têm garantia?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Sim! Todas as nossas peças têm garantia:</p>
+                                    <ul>
+                                        <li><strong>Garantia de qualidade:</strong> 1 ano contra defeitos de fabricação</li>
+                                        <li><strong>Garantia de banho:</strong> 6 meses para peças banhadas</li>
+                                        <li><strong>Certificado:</strong> Todas as peças vêm com certificado de autenticidade</li>
+                                        <li><strong>Manutenção:</strong> Oferecemos serviço de limpeza e polimento</li>
+                                    </ul>
+                                    <p>A garantia não cobre desgaste natural pelo uso ou danos causados por mau uso.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fas fa-credit-card me-3"></i>
+                                    Quais formas de pagamento aceitam?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Aceitamos diversas formas de pagamento:</p>
+                                    <ul>
+                                        <li><strong>Cartões:</strong> Visa, Mastercard, American Express</li>
+                                        <li><strong>MB Way:</strong> Pagamento instantâneo via telemóvel</li>
+                                        <li><strong>Transferência:</strong> Bancária (com desconto de 3%)</li>
+                                        <li><strong>PayPal:</strong> Seguro e rápido</li>
+                                        <li><strong>Multibanco:</strong> Referência MB</li>
+                                    </ul>
+                                    <p>Todos os pagamentos são processados de forma segura com encriptação SSL.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <i class="fas fa-gem me-3"></i>
+                                    Fazem peças personalizadas?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Sim! Oferecemos serviço de personalização:</p>
+                                    <ul>
+                                        <li><strong>Gravações:</strong> Nomes, datas, mensagens especiais</li>
+                                        <li><strong>Tamanhos:</strong> Ajustes de anéis e pulseiras</li>
+                                        <li><strong>Cores:</strong> Diferentes banhos e acabamentos</li>
+                                        <li><strong>Designs únicos:</strong> Criação de peças exclusivas</li>
+                                    </ul>
+                                    <p>Entre em contato para discutir sua ideia. Prazo adicional de 5-10 dias úteis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <i class="fas fa-heart me-3"></i>
+                                    Como cuidar das minhas peças?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Para manter suas peças sempre belas:</p>
+                                    <ul>
+                                        <li><strong>Limpeza:</strong> Use pano macio e seco após o uso</li>
+                                        <li><strong>Armazenamento:</strong> Guarde em local seco, preferencialmente em saquinhos individuais</li>
+                                        <li><strong>Evite:</strong> Contato com perfumes, cremes e produtos químicos</li>
+                                        <li><strong>Água:</strong> Retire antes do banho, piscina ou praia</li>
+                                        <li><strong>Manutenção:</strong> Traga para limpeza profissional a cada 6 meses</li>
+                                    </ul>
+                                    <p>Enviamos um guia de cuidados com cada compra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours & Location -->
+    <section class="info-section bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Horário de Atendimento</h3>
+                        </div>
+                        
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <div class="day">Segunda a Sexta</div>
+                                <div class="time">09:00 - 18:00</div>
+                                <div class="status online">Online</div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="day">Sábado</div>
+                                <div class="time">09:00 - 14:00</div>
+                                <div class="status online">Online</div>
+                            </div>
+                            <div class="schedule-item">
+                                <div class="day">Domingo</div>
+                                <div class="time">Fechado</div>
+                                <div class="status offline">Offline</div>
+                            </div>
+                            <div class="schedule-item holiday">
+                                <div class="day">Feriados</div>
+                                <div class="time">Fechado</div>
+                                <div class="status offline">Offline</div>
+                            </div>
+                        </div>
+                        
+                        <div class="current-status">
+                            <i class="fas fa-circle text-success"></i>
+                            <span>Atualmente: <strong>Aberto</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Nossa Localização</h3>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="address">
+                                <h5>Sede Principal</h5>
+                                <p>
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Lisboa, Portugal
+                                </p>
+                                <p>
+                                    <i class="fas fa-phone me-2"></i>
+                                    +351 964 591 135
+                                </p>
+                                <p>
+                                    <i class="fas fa-envelope me-2"></i>
+                                    info@drucciacessorios.pt
+                                </p>
+                            </div>
+                            
+                            <div class="map-placeholder">
+                                <div class="map-overlay">
+                                    <i class="fas fa-map fa-3x"></i>
+                                    <p>Mapa Interativo</p>
+                                    <small>Clique para ver no Google Maps</small>
+                                </div>
+                            </div>
+                            
+                            <div class="location-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-car"></i>
+                                    <span>Estacionamento</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-wheelchair"></i>
+                                    <span>Acessível</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Wi-Fi Grátis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Redes Sociais</span>
+                </div>
+                <h2 class="section-title">Siga-nos</h2>
+                <p class="section-description">
+                    Acompanhe nossas novidades e inspirações diárias
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="social-card instagram-card">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h4>Instagram</h4>
+                        <p>Inspirações diárias e bastidores</p>
+                        <div class="social-stats">
+                            <span class="followers">12.5k</span>
+                            <span class="label">Seguidores</span>
+                        </div>
+                        <a href="#" class="btn btn-instagram">
+                            <i class="fab fa-instagram me-2"></i>
+                            Seguir
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="social-card facebook-card">
+                        <div class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h4>Facebook</h4>
+                        <p>Comunidade e novidades</p>
+                        <div class="social-stats">
+                            <span class="followers">8.2k</span>
+                            <span class="label">Curtidas</span>
+                        </div>
+                        <a href="#" class="btn btn-facebook">
+                            <i class="fab fa-facebook me-2"></i>
+                            Curtir
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="social-card pinterest-card">
+                        <div class="social-icon">
+                            <i class="fab fa-pinterest"></i>
+                        </div>
+                        <h4>Pinterest</h4>
+                        <p>Ideias e combinações</p>
+                        <div class="social-stats">
+                            <span class="followers">5.8k</span>
+                            <span class="label">Seguidores</span>
+                        </div>
+                        <a href="#" class="btn btn-pinterest">
+                            <i class="fab fa-pinterest me-2"></i>
+                            Seguir
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="social-card youtube-card">
+                        <div class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4>YouTube</h4>
+                        <p>Tutoriais e cuidados</p>
+                        <div class="social-stats">
+                            <span class="followers">3.1k</span>
+                            <span class="label">Inscritos</span>
+                        </div>
+                        <a href="#" class="btn btn-youtube">
+                            <i class="fab fa-youtube me-2"></i>
+                            Inscrever
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <div class="brand-container">
+                            <i class="fas fa-gem brand-icon"></i>
+                            <div class="brand-text">
+                                <div class="brand-name">Drucci</div>
+                                <div class="brand-subtitle">Acessórios</div>
+                            </div>
+                        </div>
+                        <p class="mt-3">Elegância e qualidade em cada peça. Sua beleza é nossa inspiração desde 2018.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Navegação</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Coleções</h5>
+                    <ul class="footer-links">
+                        <li><a href="produtos.html?category=necklaces">Colares</a></li>
+                        <li><a href="produtos.html?category=earrings">Brincos</a></li>
+                        <li><a href="produtos.html?category=bracelets">Pulseiras</a></li>
+                        <li><a href="produtos.html?category=rings">Anéis</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="footer-title">Informações</h5>
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lisboa, Portugal</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+351 964 591 135</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@drucciacessorios.pt</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Seg-Sex: 9h-18h | Sáb: 9h-14h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright">&copy; 2024 Drucci Acessórios. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-badges">
+                        <span class="badge-item">
+                            <i class="fas fa-shield-alt"></i>
+                            Compra Segura
+                        </span>
+                        <span class="badge-item">
+                            <i class="fas fa-truck"></i>
+                            Envio Grátis
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content luxury-modal">
+                <div class="modal-body text-center p-5">
+                    <div class="success-icon mb-4">
+                        <i class="fas fa-check-circle fa-4x text-success"></i>
+                    </div>
+                    <h3 class="mb-3">Mensagem Enviada!</h3>
+                    <p class="mb-4">Obrigado pelo seu contato. Nossa equipe responderá em breve.</p>
+                    <button type="button" class="btn btn-primary btn-luxury" data-bs-dismiss="modal">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="contato.js"></script>
+</body>
+</html>

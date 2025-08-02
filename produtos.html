@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Drucci Acessórios | Semi-joias Premium</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="produtos-new.css">
+    <link rel="shortcut icon" href="/favicon_io (1)/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-gem me-2"></i>Drucci Acessórios
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-primary position-relative" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <span class="badge bg-primary-soft text-primary mb-3 px-3 py-2">✨ Coleção 2024</span>
+                        <h1 class="display-4 fw-bold mb-4">
+                            Semi-joias que <span class="text-primary">Encantam</span>
+                        </h1>
+                        <p class="lead text-muted mb-4">
+                            Descubra nossa coleção exclusiva com os melhores preços do mercado. 
+                            Qualidade premium, design único e entrega rápida.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mb-4">
+                            <div class="feature-item">
+                                <i class="fas fa-shipping-fast text-primary"></i>
+                                <span>Envio Grátis</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-medal text-primary"></i>
+                                <span>Qualidade Premium</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span>Garantia Total</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg px-4" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                            Explorar Coleção <i class="fas fa-arrow-down ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Drucci Acessórios" class="img-fluid rounded-4 shadow-lg">
+                        <div class="floating-card">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">4.9/5</div>
+                                    <small class="text-muted">+1000 clientes satisfeitos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section bg-light py-4" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="filters-container bg-white rounded-4 shadow-sm p-4">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label fw-semibold">Categoria</label>
+                                <select class="form-select" id="categoryFilter">
+                                    <option value="all">Todas as Categorias</option>
+                                    <option value="necklaces">Colares</option>
+                                    <option value="earrings">Brincos</option>
+                                    <option value="bracelets">Pulseiras</option>
+                                    <option value="rings">Anéis</option>
+                                    <option value="sets">Conjuntos</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label fw-semibold">Coleção</label>
+                                <select class="form-select" id="seasonFilter">
+                                    <option value="all">Todas as Coleções</option>
+                                    <option value="spring-summer">Primavera/Verão</option>
+                                    <option value="autumn-winter">Outono/Inverno</option>
+                                    <option value="year-round">Atemporal</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label fw-semibold">Ordenar por</label>
+                                <select class="form-select" id="sortFilter">
+                                    <option value="featured">Destaques</option>
+                                    <option value="price-low">Menor Preço</option>
+                                    <option value="price-high">Maior Preço</option>
+                                    <option value="newest">Mais Recentes</option>
+                                    <option value="rating">Melhor Avaliados</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label fw-semibold">Preço até</label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="range" class="form-range" id="priceRange" min="0" max="100" value="100">
+                                    <span class="badge bg-primary" id="priceValue">€100</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-outline-danger btn-sm" id="clearFilters">
+                                    <i class="fas fa-times me-1"></i>Limpar Filtros
+                                </button>
+                                <span class="ms-3 text-muted" id="resultsCount">Mostrando todos os produtos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section py-5">
+        <div class="container">
+            <!-- Loading Spinner -->
+            <div class="text-center py-5" id="loadingSpinner">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Carregando...</span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="productsGrid" style="display: none;">
+                <!-- Products will be loaded here -->
+            </div>
+
+            <!-- No Results -->
+            <div class="text-center py-5" id="noResults" style="display: none;">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">Nenhum produto encontrado</h4>
+                <p class="text-muted">Tente ajustar os filtros ou fazer uma nova busca</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="offers-section bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold mb-3">Ofertas Especiais</h2>
+                    <p class="lead">Aproveite nossas condições exclusivas</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="offer-card text-center">
+                        <div class="offer-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5 class="fw-bold">Envio Grátis</h5>
+                        <p class="mb-0">Em compras acima de €50</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="offer-card text-center">
+                        <div class="offer-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h5 class="fw-bold">Troca Garantida</h5>
+                        <p class="mb-0">30 dias para trocar</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="offer-card text-center">
+                        <div class="offer-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h5 class="fw-bold">Desconto Progressivo</h5>
+                        <p class="mb-0">Quanto mais compra, mais desconto</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="offer-card text-center">
+                        <div class="offer-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h5 class="fw-bold">Embalagem Premium</h5>
+                        <p class="mb-0">Grátis em todos os pedidos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h3 class="fw-bold mb-3">Fique por dentro das novidades</h3>
+                    <p class="text-muted mb-4">Receba ofertas exclusivas e seja a primeira a conhecer nossas novas coleções</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Seu melhor email">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-gem me-2 text-primary"></i>Drucci Acessórios
+                    </h5>
+                    <p class="text-muted">Elegância e qualidade em cada peça. Sua beleza é nossa inspiração.</p>
+                     <div class="social-links">
+                        <a href="https://www.tiktok.com/@luduvina2008?_t=ZM-8yWaNjNJbZ0&_r=1"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/drucci_acessorios?igsh=MTFyd205dTBhMjE0Yw=="><i class="fab fa-instagram"></i></a>
+                        <a href=" https://wa.me/351964591135"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Início</a></li>
+                        <li><a href="produtos.html" class="text-muted text-decoration-none">Produtos</a></li>
+                        <li><a href="nossa-historia.html" class="text-muted text-decoration-none">Nossa Historia</a></li>
+                        <li><a href="contacto.html" class="text-muted text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contato</h6>
+                    <p class="text-muted mb-2">
+                        <i class="fas fa-phone me-2"></i>+351-964-591-135
+                    </p>
+                    <p class="text-muted mb-2">
+                        <i class="fas fa-envelope me-2"></i>info@drucciacessorios.pt
+                    </p>
+                    <p class="text-muted">
+                        <i class="fas fa-map-marker-alt me-2"></i>Portugal
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <h6 class="fw-bold mb-3">Horário de Atendimento</h6>
+                    <p class="text-muted mb-1">Segunda - Sexta: 9h às 18h</p>
+                    <p class="text-muted mb-1">Sábado: 9h às 14h</p>
+                    <p class="text-muted">Domingo: Fechado</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 Drucci Acessórios. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">Desenvolvido por World Tech</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Buscar Produtos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control form-control-lg" id="searchInput" placeholder="Digite o nome do produto...">
+                    <div class="mt-3" id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Carrinho de Compras
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Total: <span class="text-primary" id="cartTotal">€0.00</span></h5>
+                        </div>
+                        <button class="btn btn-primary w-100 btn-lg" id="checkoutBtn">
+                            <i class="fas fa-whatsapp me-2"></i>Finalizar via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="quickViewContent">
+                    <!-- Quick view content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="produtos-new.js"></script>
+</body>
+</html>
